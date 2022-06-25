@@ -4,7 +4,7 @@ import time
 
 # Version
 
-version = '1.0.0'
+version = '1.0.1'
 
 # Variable inits
 
@@ -33,7 +33,7 @@ def countdown(time_sec):
         mins, secs = divmod(time_sec, 60)
         timeformat = '{:02d}:{:02d}'.format(mins, secs)
         print('Time remaining: {}                       '.format(timeformat), end='\r')
-        for i in range(9):         # Restart timer during wait
+        for i in range(10):         # Restart timer during wait
             if key_press == True:
                 print('Key pressed. Restarting counter....', end ='\r')
                 break
@@ -53,9 +53,6 @@ def on_release(key):
 
     key_press = False
     key_press_counter +=1
-    if key == keyboard.Key.esc:
-        # Stop listener
-        return False
 
 # Main sequence
 
